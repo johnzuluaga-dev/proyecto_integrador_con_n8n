@@ -121,6 +121,8 @@ En futuras versiones del sistema se podrían implementar:
 * programa de fidelización
 
 ---
+## Workflow 4 - Reporte Semanal con IA
+Schedule los lunes a las 7AM que genera métricas de la semana anterior y un análisis con OpenAI, guardado en Supabase.
 
 # 👨‍💻 Autor
 
