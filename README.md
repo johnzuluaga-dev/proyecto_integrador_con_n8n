@@ -110,6 +110,8 @@ Este sistema permite a las barberías:
 * analizar el rendimiento del negocio
 
 ---
+## Workflow 2 - Recordatorio Automático
+Schedule diario a las 8AM que consulta citas del día siguiente y envía recordatorios por WhatsApp.
 
 # 🚀 Futuras Mejoras
 
