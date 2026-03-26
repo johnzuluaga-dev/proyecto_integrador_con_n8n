@@ -122,6 +122,14 @@ En futuras versiones del sistema se podrían implementar:
 
 ---
 
+## 🚀 BarberFlow
+
+Sistema de gestión de citas para barberías construido con n8n, Supabase y WhatsApp Business API.
+
+## 🗄️ Base de datos
+- **appointments:** gestión de citas
+- **reports:** reportes semanales generados con IA
+
 # 👨‍💻 Autor
 
 John Zuluaga
