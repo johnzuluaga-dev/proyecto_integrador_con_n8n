@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import BookingForm from './components/BookingForm';
+import BookingForm from './BookingForm';
 import AdminDashboard from './components/AdminDashboard';
 import CancelAppointment from './components/CancelAppointment';
 

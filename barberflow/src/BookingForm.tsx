@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from './lib/utils';
 import { Calendar, Clock, User, Scissors, Phone, CheckCircle2, AlertCircle } from 'lucide-react';
 import { format } from 'date-fns';
 import { motion, AnimatePresence } from 'motion/react';
