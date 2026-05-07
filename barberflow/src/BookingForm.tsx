@@ -3,6 +3,7 @@ import { cn } from './lib/utils';
 import { Calendar, Clock, User, Scissors, Phone, CheckCircle2, AlertCircle } from 'lucide-react';
 import { format } from 'date-fns';
 import { motion, AnimatePresence } from 'motion/react';
+import { sendBookingToN8n } from './lib/n8n';
 
 const BARBEROS = ['Carlos "The Blade"', 'Andrés Estilo', 'Juan Classic'];
 const SERVICIOS = [
@@ -31,11 +32,26 @@ export default function BookingForm() {
     setLoading(true);
     setError(null);
     
-    // Simulación de envío
-    setTimeout(() => {
+    try {
+      // Obtener el precio del servicio seleccionado
+      const selectedService = SERVICIOS.find(s => s.name === formData.service);
+      const price = selectedService?.price || 0;
+      
+      // Enviar con precio incluido
+      await sendBookingToN8n({
+        ...formData,
+        price
+      });
       setSuccess(true);
+    } catch (err) {
+      setError(
+        err instanceof Error 
+          ? err.message 
+          : 'Error al agendar la cita. Intenta nuevamente.'
+      );
+    } finally {
       setLoading(false);
-    }, 1500);
+    }
   };
 
   if (success) {
