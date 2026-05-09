@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { motion, AnimatePresence } from 'motion/react';
 import { sendBookingToN8n } from './lib/n8n';
 
-const BARBEROS = ['Carlos "The Blade"', 'Andrés Estilo', 'Juan Classic'];
+const BARBEROS = ['Carlos The Blade', 'Andrés Estilo', 'Juan Classic'];
 const SERVICIOS = [
   { name: 'Corte Clásico', price: 15 },
   { name: 'Corte + Barba', price: 25 },
@@ -33,15 +33,9 @@ export default function BookingForm() {
     setError(null);
     
     try {
-      // Obtener el precio del servicio seleccionado
       const selectedService = SERVICIOS.find(s => s.name === formData.service);
       const price = selectedService?.price || 0;
-      
-      // Enviar con precio incluido
-      await sendBookingToN8n({
-        ...formData,
-        price
-      });
+      await sendBookingToN8n({ ...formData, price });
       setSuccess(true);
     } catch (err) {
       setError(
@@ -203,6 +197,15 @@ export default function BookingForm() {
           </p>
         </form>
       </motion.div>
+
+      {/* Enlace admin discreto */}
+      <a
+        href="/login"
+        className="fixed bottom-6 right-6 text-bone/20 hover:text-bone/50 transition-colors text-xs uppercase tracking-widest z-20"
+      >
+        Admin
+      </a>
+
     </div>
   );
 }
