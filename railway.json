@@ -1,7 +1,7 @@
 {
   "build": {
     "builder": "nixpacks",
-    "buildCommand": "rm -rf node_modules package-lock.json && npm install && npm run build"
+    "buildCommand": "rm -f package-lock.json && npm install && npm run build"
   },
   "deploy": {
     "startCommand": "npx serve -s dist -p ${PORT:-3000}"
