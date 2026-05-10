@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "cd barberflow && npm install && npm run build"
+  },
+  "deploy": {
+    "startCommand": "npx serve -s barberflow/dist -p ${PORT:-3000}"
+  }
+}
