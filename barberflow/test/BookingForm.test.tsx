@@ -1,14 +1,10 @@
-import { render, screen, fireEvent, act } from "@testing-library/react"; // 👈 act agregado
+// test/BookingForm.test.tsx
+jest.mock('../src/lib/n8n', () => ({
+  sendBookingToN8n: jest.fn().mockResolvedValue({ success: true }),
+}));
+
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import BookingForm from "../src/BookingForm";
-
-beforeEach(() => {
-  jest.useFakeTimers();
-});
-
-afterEach(() => {
-  jest.runOnlyPendingTimers();
-  jest.useRealTimers();
-});
 
 describe("BookingForm", () => {
 
@@ -42,24 +38,18 @@ describe("BookingForm", () => {
 
     const selects = screen.getAllByRole("combobox");
     fireEvent.change(selects[0], { target: { value: "Corte Clásico" } });
-    fireEvent.change(selects[1], { target: { value: 'Carlos "The Blade"' } });
+    fireEvent.change(selects[1], { target: { value: "Carlos The Blade" } });
 
-    const allInputs = screen.getAllByDisplayValue("");
-    const dateInput = allInputs.find((el) => (el as HTMLInputElement).type === "date")!;
-    const timeInput = allInputs.find((el) => (el as HTMLInputElement).type === "time")!;
-
-    fireEvent.change(dateInput, { target: { value: "2026-04-25" } });
+    const dateInput = document.querySelector('input[type="date"]') as HTMLInputElement;
+    const timeInput = document.querySelector('input[type="time"]') as HTMLInputElement;
+    fireEvent.change(dateInput, { target: { value: "2026-05-20" } });
     fireEvent.change(timeInput, { target: { value: "10:00" } });
 
-    fireEvent.click(screen.getByRole("button", { name: /agendar cita/i }));
-
-    // ✅ act() envuelve el timer para que React procese el setState limpiamente
     await act(async () => {
-      jest.advanceTimersByTime(1500);
+      fireEvent.click(screen.getByRole("button", { name: /agendar cita/i }));
     });
 
-    const successMessage = await screen.findByText(/cita confirmada/i);
-    expect(successMessage).toBeInTheDocument();
+    expect(screen.getByText(/cita confirmada/i)).toBeInTheDocument();
   });
 
 });
