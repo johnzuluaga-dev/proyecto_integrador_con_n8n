@@ -109,6 +109,9 @@ Este sistema permite a las barberías:
 * automatizar procesos administrativos
 * analizar el rendimiento del negocio
 
+
+# Workflow 1 - Nueva Cita
+Webhook que recibe, valida y registra nuevas citas en Supabase y notifica al cliente por WhatsApp.
 ---
 
 # 🚀 Futuras Mejoras
