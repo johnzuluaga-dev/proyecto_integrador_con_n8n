@@ -121,6 +121,9 @@ En futuras versiones del sistema se podrían implementar:
 * programa de fidelización
 
 ---
+## Workflow 2 - Recordatorio Automático
+Schedule diario a las 8AM que consulta citas del día siguiente 
+y envía recordatorios por WhatsApp a cada cliente.
 
 # 👨‍💻 Autor
 
