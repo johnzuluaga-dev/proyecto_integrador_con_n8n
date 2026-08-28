@@ -121,5 +121,4 @@ Basadas en las funcionalidades descritas en `README.md` y `Arquitectura.md` del 
 ---
 
 ## Notas
-- Estas historias de usuario se derivaron de las funcionalidades ya documentadas (`README.md`, `Arquitectura.md`) y de los diagramas de casos de uso en `/diagrams`. El repositorio original no contenía historias de usuario redactadas.
-- Se recomienda validar cada HU contra el diagrama `casos de uso.jpg` para asegurar que no falte ningún actor o flujo, y ajustar prioridades (MoSCoW o puntos de historia) según el backlog real del proyecto.
+- Estas historias de usuario se derivaron de las funcionalidades ya documentadas (`README.md`, `Arquitectura.md`) y de los diagramas de casos de uso.
