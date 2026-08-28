@@ -123,8 +123,8 @@ Basadas en las funcionalidades documentadas (`README.md`, `Arquitectura.md`) y e
 **para** acceder de forma restringida al panel administrativo.
 
 **Campos:**
-- `username` (texto libre) — Obligatorio. Se compara contra un usuario configurado (`admin` por defecto).
-- `password` (texto, oculto con opción de mostrar/ocultar) — Obligatorio. Se compara contra una contraseña configurada (`barberflow2026` por defecto).
+- `username` (texto libre) — Obligatorio. 
+- `password` (texto, oculto con opción de mostrar/ocultar) — Obligatorio. 
 
 **Criterios de aceptación:**
 - Ambos campos son obligatorios para enviar el formulario.
