@@ -111,6 +111,9 @@ Este sistema permite a las barberías:
 
 ---
 
+## Workflow 3 - Cancelación de Cita
+Webhook que recibe un appointment_id, actualiza el status a cancelled en Supabase y notifica al cliente por WhatsApp.
+
 # 🚀 Futuras Mejoras
 
 En futuras versiones del sistema se podrían implementar:
